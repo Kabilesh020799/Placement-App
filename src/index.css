@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: 'Oxygen', sans-serif;
 
 }
 
@@ -7,9 +8,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-@font-face {
-  font-family: 'Oxygen';
-  src: local('Oxygen'), url(./fonts/Oxygen-Bold.ttf) format('truetype');
-}
-

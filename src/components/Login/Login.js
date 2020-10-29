@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 import axios from 'axios'
+
 import './Login.css'
 
 function Login() {
+    let history = useHistory();
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
 
@@ -12,7 +15,12 @@ function Login() {
         try{
             const body = {id:login,password:password};
             await axios.post("http://localhost:5000/api/login",body)
-            .then(res=>alert(res.data))
+            .then(res=>{
+                if(res.data==="Login Successfull"){
+                    history.push('profile')
+                }
+                console.log(res.data)
+            })
             .catch(err=>console.log(err))
         }
         catch(err){
