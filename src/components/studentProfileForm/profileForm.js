@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserGraduate,faGraduationCap,faUser,faIdCardAlt,faEnvelope,faBuilding,faAward,faPercentage} from '@fortawesome/free-solid-svg-icons';
 
 
+
 const ProfileForm = () => {
 
     return(
