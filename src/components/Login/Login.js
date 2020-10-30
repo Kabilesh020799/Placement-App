@@ -5,6 +5,7 @@ import axios from 'axios'
 import './Login.css'
 
 function Login() {
+
     let history = useHistory();
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
@@ -13,10 +14,11 @@ function Login() {
         event.preventDefault();
         
         try{
+            console.log(login);
             const body = {id:login,password:password};
             await axios.post("http://localhost:5000/api/login",body)
             .then(res=>{
-                if(res.data==="Login Successfull"){
+                if(res.data=== "Login Successful"){
                     history.push('profile')
                 }
                 console.log(res.data)
