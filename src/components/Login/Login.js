@@ -17,18 +17,13 @@ const Login = () =>  {
             const body = {id:login,password:password};
             await axios.post("http://localhost:5000/api/login",body)
             .then(res=>{
-<<<<<<< HEAD
-                if(res.data.msg=== "Login Successfull"){
-                    localStorage.setItem('token',res.data.token)
-                    history.push('profile')
-=======
                 console.log(res);
                 if(res.data['msg'] === "Login Successfull"){
                     const token = res.data['token'];
                     localStorage.setItem('secretToken',token);
                     history.push('profile/'+login);
->>>>>>> 16dc0f9be0a79de32d717b909222b2d2d212b715
                 }
+                console.log(res.data)
             })
             .catch(err=>console.log(err))
         }

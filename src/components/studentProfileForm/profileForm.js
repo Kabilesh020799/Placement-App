@@ -25,12 +25,9 @@ const ProfileForm = () => {
         else if(data.dept === "EEE"){
             dept_id = 4;
         }
-        const body = {name:data.name,regnumber:data.regno,email:data.email,dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
+        const body = {name:data.name,regnumber:data.regno,email:data.email,fk_dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
                       ten_mark:data.sslcmark,ten_board:data.sslcboard}
 
-<<<<<<< HEAD
-        await Axios.post('http://localhost:5000/api/form',body)
-=======
         const token = localStorage.getItem('secretToken');
         
         const headers = {
@@ -38,7 +35,6 @@ const ProfileForm = () => {
         }      
 
         await Axios.post('http://localhost:5000/api/form',body,{headers})
->>>>>>> 16dc0f9be0a79de32d717b909222b2d2d212b715
                     .then(res => console.log(res))
                     .catch(err=> console.log(err));              
     }
