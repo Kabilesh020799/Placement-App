@@ -3,8 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from 'axios'
 
 import './Login.css'
-
-function Login() {
+const Login = () =>  {
 
     let history = useHistory();
     const [login,setLogin] = useState('')
@@ -18,8 +17,11 @@ function Login() {
             const body = {id:login,password:password};
             await axios.post("http://localhost:5000/api/login",body)
             .then(res=>{
-                if(res.data=== "Login Successful"){
-                    history.push('profile')
+                console.log(res);
+                if(res.data['msg'] === "Login Successfull"){
+                    const token = res.data['token'];
+                    localStorage.setItem('secretToken',token);
+                    history.push('profile/'+login);
                 }
                 console.log(res.data)
             })
@@ -53,4 +55,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;
