@@ -4,6 +4,9 @@ import Login from './components/Login/Login';
 import ProfileForm from './components/studentProfileForm/profileForm';
 import {BrowserRouter as Router,Switch} from "react-router-dom";
 
+window.onbeforeunload = function() {
+  localStorage.clear();
+}
 
 function App() {
   return (
@@ -12,7 +15,7 @@ function App() {
     <Router>
     <Switch>
       <Route exact path="/"><Login/></Route>
-      <Route exact path='/profile'><ProfileForm/></Route>
+      <Route path='/profile/:id'><ProfileForm/></Route>
     </Switch>
     </Router>
     

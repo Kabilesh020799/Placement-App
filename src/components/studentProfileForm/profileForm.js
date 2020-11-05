@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserGraduate,faGraduationCap,faUser,faIdCardAlt,faEnvelope,faBuilding,faAward,faPercentage} from '@fortawesome/free-solid-svg-icons';
 import Axios from 'axios';
-
+import { useParams } from "react-router";
 
 const ProfileForm = () => {
+
+    let {id} = useParams();
 
     const{register,handleSubmit} = useForm();
     const onSubmit = async(data) => {
@@ -26,7 +28,17 @@ const ProfileForm = () => {
         const body = {name:data.name,regnumber:data.regno,email:data.email,dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
                       ten_mark:data.sslcmark,ten_board:data.sslcboard}
 
+<<<<<<< HEAD
         await Axios.post('http://localhost:5000/api/form',body)
+=======
+        const token = localStorage.getItem('secretToken');
+        
+        const headers = {
+            'authorization' : 'Bearer '+token,
+        }      
+
+        await Axios.post('http://localhost:5000/api/form',body,{headers})
+>>>>>>> 16dc0f9be0a79de32d717b909222b2d2d212b715
                     .then(res => console.log(res))
                     .catch(err=> console.log(err));              
     }
@@ -46,7 +58,7 @@ const ProfileForm = () => {
                 <span className="header-icon"><FontAwesomeIcon icon={faIdCardAlt} color="#000000"/></span>    
                 <label className="stu-profile-form-label">Registration Number</label><br/>
                 <input className="stu-profile-form-field" placeholder="Your Register Number" required minLength="9" maxLength="9"
-                name="regno" ref={register}/>
+                name="regno" ref={register} value={id} selected/>
                 
                 <span className="header-icon"><FontAwesomeIcon icon={faEnvelope} color="#000000"/></span>
                 <label className="stu-profile-form-label">Email address</label><br/>
