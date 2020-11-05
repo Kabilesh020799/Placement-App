@@ -23,10 +23,10 @@ const ProfileForm = () => {
         else if(data.dept === "EEE"){
             dept_id = 4;
         }
-        const body = {name:data.name,regnumber:data.regno,email:data.email,fk_dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
+        const body = {name:data.name,regnumber:data.regno,email:data.email,dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
                       ten_mark:data.sslcmark,ten_board:data.sslcboard}
 
-        await Axios.post('http://localhost:5000/api/profile',body)
+        await Axios.post('http://localhost:5000/api/form',body)
                     .then(res => console.log(res))
                     .catch(err=> console.log(err));              
     }

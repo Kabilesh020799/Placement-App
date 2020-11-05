@@ -18,10 +18,10 @@ function Login() {
             const body = {id:login,password:password};
             await axios.post("http://localhost:5000/api/login",body)
             .then(res=>{
-                if(res.data=== "Login Successful"){
+                if(res.data.msg=== "Login Successfull"){
+                    localStorage.setItem('token',res.data.token)
                     history.push('profile')
                 }
-                console.log(res.data)
             })
             .catch(err=>console.log(err))
         }
