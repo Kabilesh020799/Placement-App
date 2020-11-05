@@ -25,7 +25,7 @@ const ProfileForm = () => {
         else if(data.dept === "EEE"){
             dept_id = 4;
         }
-        const body = {name:data.name,regnumber:data.regno,email:data.email,fk_dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
+        const body = {name:data.name,reg_num:data.regno,email:data.email,dept:dept_id,cgpa:data.cgpa,twelve_mark:data.hsemark,twelve_board:data.hseboard,
                       ten_mark:data.sslcmark,ten_board:data.sslcboard}
 
         const token = localStorage.getItem('secretToken');
