@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./adminForm.css";
 
 function AdminForm() {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [ctc, setCtc] = useState("");
+  const [date, setDate] = useState("");
+  const [cgpa, setCgpa] = useState("");
+
+  const onSubmitted = () => {};
+
   return (
-    <section class="admin__formdetails">
-      <div class="admin__box1">
-        <h1 class="admin__heading1">Company Details</h1>
-        <div class="admin__details">
-          <form name="cmpy" onsubmit="return validate()" method="POST">
+    <section className="admin__formdetails">
+      <div className="admin__box1">
+        <h1 className="admin__heading1">Company Details</h1>
+        <div className="admin__details">
+          <form name="cmpy" onSubmit={onSubmitted}>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Name of the company"
               name="company_name"
@@ -18,6 +28,8 @@ function AdminForm() {
             />
             <br />
             <input
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
               type="text"
               placeholder="Role offered"
               name="role"
@@ -26,6 +38,8 @@ function AdminForm() {
             />
             <br />
             <input
+              value={ctc}
+              onChange={(e) => setCtc(e.target.value)}
               type="text"
               placeholder="CTC offered"
               name="ctc"
@@ -34,6 +48,8 @@ function AdminForm() {
             />
             <br />
             <input
+              value={cgpa}
+              onChange={(e) => setCgpa(e.target.value)}
               type="text"
               placeholder="CGPA req"
               name="cgpa"
@@ -41,9 +57,17 @@ function AdminForm() {
               className="admin__input"
             />
             <br />
-            <input type="date" name="date" className="admin__input" />
+            <input
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              type="date"
+              name="date"
+              className="admin__input"
+            />
             <br />
-            <button type="submit"></button>
+            <button className="adminBtn" type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>
