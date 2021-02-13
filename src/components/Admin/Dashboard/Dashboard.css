@@ -1,0 +1,26 @@
+.adminDashboard {
+  display: flex;
+}
+.adminDashboard__sider {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: cornflowerblue;
+}
+.adminDashboard__main {
+  flex: 1;
+  background-color: lightblue;
+}
+.adminDashboard__siderItem {
+  height: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.adminDashboard__siderItem:hover {
+  background-color: darkgray;
+}

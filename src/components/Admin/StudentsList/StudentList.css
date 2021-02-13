@@ -1,0 +1,17 @@
+.studentList {
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.studentList__list {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px 0px;
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

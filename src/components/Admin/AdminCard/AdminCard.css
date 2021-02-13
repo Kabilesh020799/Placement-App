@@ -1,0 +1,37 @@
+.adminCard {
+  background-color: lightgreen;
+  height: 200px;
+  width: 400px;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.adminCard__role {
+  font-weight: 700;
+  font-size: 30px;
+}
+.adminCard__ctc {
+  font-size: 20px;
+  font-weight: 500;
+}
+.adminCard_second {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+.adminCard__btn {
+  background-color: greenyellow;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 150px;
+  box-shadow: 1px 1px 1px 1px grey;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: black;
+}

@@ -1,9 +1,10 @@
 import { Route } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login/Login";
-import ProfileForm from "./components/Student/studentProfileForm/profileForm";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import AdminForm from "./components/Admin/adminForm/adminForm";
+import AdminDashboard from "./components/Admin/Dashboard/Dashboard";
+import Dashboard from "./components/Student/studentProfileForm/Dashboard/Dashboard";
+import StudentList from "./components/Admin/StudentsList/StudentList";
 
 window.onbeforeunload = function () {
   localStorage.clear();
@@ -18,14 +19,18 @@ function App() {
             <Login />
           </Route>
           <Route path="/profile/:id">
-            <ProfileForm />
+            <Dashboard />
           </Route>
           <Route
             path="/admin"
             component={() => <Login isAdmin={true} />}
             exact
           />
-          <Route path="/admin/profile/:id" exact component={AdminForm} />
+          <Route path="/admin/profile/:id" exact component={AdminDashboard} />
+          <Route
+            path="/admin/profile/:company_id/:id"
+            component={StudentList}
+          />
         </Switch>
       </Router>
     </div>
