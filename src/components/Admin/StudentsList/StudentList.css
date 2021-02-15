@@ -3,6 +3,8 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  margin: 25px;
 }
 
 .studentList__list {
@@ -10,7 +12,7 @@
   font-weight: 600;
   margin-top: 10px;
   padding: 10px 0px;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
   width: 100%;
   justify-content: space-around;

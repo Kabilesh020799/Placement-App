@@ -29,7 +29,7 @@ function StudentList() {
       <div
         className="studentList__list"
         style={{
-          border: "none",
+          borderBottom: "1px solid black",
           marginTop: "30px",
           fontWeight: "bolder",
           fontSize: "25px",

@@ -1,8 +1,9 @@
 .adminCard {
-  background-color: lightgreen;
+  background-color: rgb(79, 148, 209);
   height: 200px;
-  width: 400px;
+  width: 350px;
   margin: 40px;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@
   justify-content: space-around;
 }
 .adminCard__btn {
-  background-color: greenyellow;
+  background-color: rgb(226, 164, 98);
   border-radius: 10px;
   font-size: 15px;
   width: 150px;

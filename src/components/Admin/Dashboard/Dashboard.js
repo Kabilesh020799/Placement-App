@@ -37,7 +37,7 @@ function Dashboard() {
           onClick={() => setIsExisting(true)}
           style={
             isExisting
-              ? { background: "darkgray", marginTop: "50px" }
+              ? { background: "#1890FF", marginTop: "50px" }
               : { marginTop: "50px" }
           }
         >
@@ -46,18 +46,26 @@ function Dashboard() {
         <div
           className="adminDashboard__siderItem"
           onClick={() => setIsExisting(false)}
-          style={!isExisting ? { background: "darkgray" } : null}
+          style={!isExisting ? { background: "#1890FF" } : null}
         >
           New Schedule
         </div>
       </div>
-      <div className="adminDashboard__main">
-        {isExisting ? (
-          schedules.map((sch) => <AdminCard key={sch.id} schedule={sch} />)
-        ) : (
+      {isExisting ? (
+        <div className="adminDashboard__main">
+          {schedules.map((sch) => (
+            <AdminCard key={sch.id} schedule={sch} />
+          ))}
+        </div>
+      ) : (
+        <div
+          style={{
+            margin: "auto",
+          }}
+        >
           <AdminForm />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
