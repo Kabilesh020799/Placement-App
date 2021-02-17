@@ -26,15 +26,33 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard__sider">
-        <div className="dashboard__siderItem" style={{ marginTop: "50px" }}>
+        <div
+          className="dashboard__siderItem"
+          style={
+            isExisting
+              ? { background: "#1890FF", marginTop: "50px" }
+              : { marginTop: "50px" }
+          }
+          onClick={() => setIsExisting(true)}
+        >
           Events
         </div>
-        <div className="dashboard__siderItem">Profile</div>
+        <div
+          className="dashboard__siderItem"
+          onClick={() => setIsExisting(false)}
+          style={!isExisting ? { background: "#1890FF" } : { marginTop: "0px" }}
+        >
+          Profile
+        </div>
       </div>
       <div>
-        <div className="dashboard__main">
-          <ProfileForm />
-        </div>
+        {isExisting ? (
+          <div></div>
+        ) : (
+          <div className="dashboard__main">
+            <ProfileForm />
+          </div>
+        )}
       </div>
     </div>
   );

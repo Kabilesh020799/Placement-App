@@ -1,10 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router";
-
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./AdminCard.css";
-
+import AlarmIcon from "@material-ui/icons/Alarm";
 function AdminCard({ schedule }) {
   const history = useHistory();
+  const date = new Date(schedule.date_alloted);
+
+  const datenow = new Date();
 
   const onClicked = (id) => {
     history.push({
@@ -28,6 +31,22 @@ function AdminCard({ schedule }) {
           {" "}
           Eligible Students
         </button>
+      </div>
+      <div className="adminCard__footer">
+        <div className="adminCard__date">{`${date.getDate()}/${date.getMonth()}/${date.getUTCFullYear()}`}</div>
+        <div className="adminCard_status">
+          {datenow > date ? (
+            <div style={{ display: "flex" }}>
+              <CheckCircleIcon />
+              <span>Completed</span>
+            </div>
+          ) : (
+            <div style={{ display: "flex" }}>
+              <AlarmIcon />
+              <span>Upcoming</span>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

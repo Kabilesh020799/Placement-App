@@ -36,3 +36,16 @@
   border: none;
   color: black;
 }
+.adminCard__footer {
+  display: flex;
+  width: 80%;
+
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.adminCard_status {
+  display: flex;
+}
+.adminCard__date {
+  font-weight: bolder;
+}

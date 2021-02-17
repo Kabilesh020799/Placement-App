@@ -35,7 +35,7 @@ const Login = ({ isAdmin }) => {
             if (res.data["msg"] === "Login Successfull") {
               const token = res.data["token"];
               localStorage.setItem("secretToken", token);
-              history.push("profile/" + login);
+              history.push("/profile/" + login);
             }
             console.log(res.data);
           })
