@@ -1,0 +1,6 @@
+.cards {
+  min-height: 100vh;
+  background-color: rgb(204, 235, 245);
+  min-width: 90vw;
+  height: fit-content;
+}

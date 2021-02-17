@@ -2,32 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import "./Dashboard.css";
 import AdminForm from "../adminForm/adminForm";
-import Axios from "axios";
 import { useParams } from "react-router";
-import AdminCard from "../AdminCard/AdminCard";
+import Cards from "../Cards/Cards";
 
 function Dashboard() {
   const [isExisting, setIsExisting] = useState(true);
-  const { id } = useParams();
-  const [schedules, setSchedules] = useState([]);
-
-  useEffect(() => {
-    const getSchedules = async () => {
-      const token = localStorage.getItem("adminToken");
-      const headers = {
-        authorization: "Bearer " + token,
-      };
-      const schedule = await Axios.get(
-        `http://localhost:5000/api/admin/${id}`,
-        {
-          headers,
-        }
-      );
-      console.log(schedule);
-      schedule.data && setSchedules([...schedule.data]);
-    };
-    getSchedules();
-  }, []);
 
   return (
     <div className="adminDashboard">
@@ -52,10 +31,8 @@ function Dashboard() {
         </div>
       </div>
       {isExisting ? (
-        <div className="adminDashboard__main">
-          {schedules.map((sch) => (
-            <AdminCard key={sch.id} schedule={sch} />
-          ))}
+        <div>
+          <Cards />
         </div>
       ) : (
         <div

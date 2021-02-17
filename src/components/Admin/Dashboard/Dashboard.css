@@ -17,7 +17,6 @@
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(204, 235, 245);
 }
 .adminDashboard__siderItem {
   height: 60px;

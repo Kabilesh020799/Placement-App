@@ -29,7 +29,14 @@ function AdminForm() {
     };
     await Axios.post("http://localhost:5000/api/adminform", body, {
       headers,
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+      alert("Successfully submitted");
+      setCgpa("");
+      setCtc("");
+      setDate("");
+      setRole("");
+    });
   };
 
   return (

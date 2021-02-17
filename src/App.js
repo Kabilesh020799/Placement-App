@@ -6,10 +6,6 @@ import AdminDashboard from "./components/Admin/Dashboard/Dashboard";
 import Dashboard from "./components/Student/studentProfileForm/Dashboard/Dashboard";
 import StudentList from "./components/Admin/StudentsList/StudentList";
 
-window.onbeforeunload = function () {
-  localStorage.clear();
-};
-
 function App() {
   return (
     <div className="App">
